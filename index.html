@@ -78,10 +78,30 @@ section{padding:6rem 2rem}
 .lead-narrative{max-width:680px;font-size:.95rem;color:var(--text2);line-height:1.75;font-weight:300}
 .lead-narrative strong{color:var(--text);font-weight:500}
 
+/* CAREER TIMELINE */
+#career{background:var(--bg)}
+.timeline{position:relative;max-width:800px;padding-left:40px;margin-top:.5rem}
+.timeline::before{content:'';position:absolute;left:14px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--accent) 0%,var(--accent-dim) 50%,var(--border) 100%)}
+
+.tl-item{position:relative;padding-bottom:2.5rem}
+.tl-item:last-child{padding-bottom:0}
+
+.tl-dot{position:absolute;left:-33px;top:6px;width:14px;height:14px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);z-index:2;transition:all .3s}
+.tl-item.current .tl-dot{background:var(--accent);box-shadow:0 0 12px rgba(78,204,163,.4)}
+.tl-item:hover .tl-dot{transform:scale(1.25);border-color:var(--accent);background:var(--accent);box-shadow:0 0 16px rgba(78,204,163,.35)}
+
+.tl-date{font-family:var(--font-mono);font-size:.7rem;font-weight:500;color:var(--accent);letter-spacing:.06em;margin-bottom:.35rem;text-transform:uppercase}
+.tl-role{font-size:1.15rem;font-weight:600;color:var(--text);letter-spacing:-.01em;margin-bottom:.2rem}
+.tl-company{font-size:.82rem;color:var(--text3);margin-bottom:.65rem;font-weight:400}
+.tl-desc{font-size:.86rem;color:var(--text2);line-height:1.7;font-weight:300;max-width:600px}
+
+.tl-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+.tl-tag{font-size:.64rem;font-weight:500;font-family:var(--font-mono);padding:3px 8px;border-radius:4px;background:var(--bg2);color:var(--text3);border:1px solid var(--border)}
+
 /* PROJECTS */
-#projects{background:var(--bg)}
+#projects{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .project-grid{display:grid;gap:1.75rem}
-.project-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .35s}
+.project-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .35s}
 .project-card:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(0,0,0,.2);border-color:var(--border-hover)}
 .project-header{padding:2rem 2rem 1.5rem;border-bottom:1px solid var(--border)}
 .project-number{font-family:var(--font-mono);font-size:.68rem;font-weight:500;color:var(--text3);margin-bottom:.75rem;letter-spacing:.05em}
@@ -90,7 +110,7 @@ section{padding:6rem 2rem}
 .project-link{display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;font-size:.8rem;font-weight:500;color:var(--accent);text-decoration:none;transition:gap .2s}
 .project-link:hover{gap:.6rem}
 
-.pipeline-flow{padding:1.25rem 2rem;background:var(--bg3);display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none}
+.pipeline-flow{padding:1.25rem 2rem;background:var(--bg4);display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none}
 .pipeline-flow::-webkit-scrollbar{display:none}
 .pipe-step{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:68px;flex-shrink:0}
 .pipe-icon{width:38px;height:38px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:.66rem;font-weight:600;font-family:var(--font-mono);transition:transform .3s}
@@ -105,13 +125,13 @@ section{padding:6rem 2rem}
 .pipe-icon.ai{background:var(--warm-glow);color:var(--warm);border:1px solid rgba(232,200,122,.15)}
 
 .project-tags{padding:1.25rem 2rem;display:flex;flex-wrap:wrap;gap:.5rem}
-.tag{font-size:.68rem;font-weight:500;font-family:var(--font-mono);padding:4px 10px;border-radius:4px;background:var(--bg3);color:var(--text3);border:1px solid var(--border);transition:all .2s}
+.tag{font-size:.68rem;font-weight:500;font-family:var(--font-mono);padding:4px 10px;border-radius:4px;background:var(--bg4);color:var(--text3);border:1px solid var(--border);transition:all .2s}
 .tag:hover{border-color:var(--accent-dim);color:var(--accent)}
 
 /* STACK */
-#stack{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+#stack{background:var(--bg);border-bottom:1px solid var(--border)}
 .stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
-.stack-category{background:var(--bg3);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--border);transition:border-color .3s}
+.stack-category{background:var(--bg2);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--border);transition:border-color .3s}
 .stack-category:hover{border-color:var(--border-hover)}
 .stack-category h4{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:1rem;font-family:var(--font-mono)}
 .stack-items{display:flex;flex-wrap:wrap;gap:.5rem}
@@ -128,15 +148,15 @@ section{padding:6rem 2rem}
 .cert-org{font-size:.64rem;color:var(--text3)}
 
 /* ABOUT */
-#about{background:var(--bg)}
+#about{background:var(--bg2);border-top:1px solid var(--border)}
 .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:start}
 .about-text p{font-size:.92rem;color:var(--text2);margin-bottom:1rem;line-height:1.75;font-weight:300}
 .about-text p:first-child{font-size:1rem;color:var(--text);font-weight:400}
 
 /* CONTACT */
-#contact{background:var(--bg2);border-top:1px solid var(--border)}
+#contact{background:var(--bg);border-top:1px solid var(--border)}
 .contact-links{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
-.contact-link{display:flex;align-items:center;gap:.6rem;padding:.75rem 1.25rem;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);text-decoration:none;color:var(--text2);font-size:.88rem;font-weight:400;transition:all .25s}
+.contact-link{display:flex;align-items:center;gap:.6rem;padding:.75rem 1.25rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);text-decoration:none;color:var(--text2);font-size:.88rem;font-weight:400;transition:all .25s}
 .contact-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
 
 footer{text-align:center;padding:3rem 2rem;font-size:.75rem;color:var(--text3);border-top:1px solid var(--border);background:var(--bg)}
@@ -154,6 +174,8 @@ footer{text-align:center;padding:3rem 2rem;font-size:.75rem;color:var(--text3);b
   .nav-links a.hide-mobile{display:none}
   .stack-grid{grid-template-columns:1fr}
   .lead-grid{grid-template-columns:1fr 1fr}
+  .timeline{padding-left:32px}
+  .tl-dot{left:-25px}
 }
 @media(max-width:480px){
   .lead-grid{grid-template-columns:1fr}
@@ -167,6 +189,7 @@ footer{text-align:center;padding:3rem 2rem;font-size:.75rem;color:var(--text3);b
   <div class="nav-logo">daniel<span>.</span>brown</div>
   <div class="nav-links">
     <a href="#leadership" class="hide-mobile" data-en="Leadership" data-de="Führung">Leadership</a>
+    <a href="#career" class="hide-mobile" data-en="Career" data-de="Werdegang">Career</a>
     <a href="#projects" class="hide-mobile" data-en="Projects" data-de="Projekte">Projects</a>
     <a href="#stack" class="hide-mobile" data-en="Stack" data-de="Stack">Stack</a>
     <a href="#about" class="hide-mobile" data-en="About" data-de="Über mich">About</a>
@@ -189,9 +212,9 @@ footer{text-align:center;padding:3rem 2rem;font-size:.75rem;color:var(--text3);b
     <span data-en="Leading teams that build" data-de="Teams führen, die">Leading teams that build</span><br>
     <span class="highlight" data-en="trustworthy data." data-de="verlässliche Daten liefern.">trustworthy data.</span>
   </h1>
-  <p data-en="Data & analytics leader with 10+ years in energy and 4+ years hands-on in the modern data stack. I've managed cross-functional teams, owned budgets, and presented to C-suite, all while staying close enough to the code to architect what ships."
-     data-de="Führungskraft in Data & Analytics mit über 10 Jahren Erfahrung im Energiesektor und über 4 Jahren hands-on im modernen Daten-Stack. Ich habe funktionsübergreifende Teams geführt, Budgets verantwortet und Ergebnisse dem C-Level präsentiert, und bin dabei nah genug am Code, um die Architektur mitzugestalten.">
-    Data & analytics leader with 10+ years in energy and 4+ years hands-on in the modern data stack. I've managed cross-functional teams, owned budgets, and presented to C-suite, all while staying close enough to the code to architect what ships.
+  <p data-en="Data & analytics leader with 8+ years in energy — from running field crews to architecting the modern data stack. I've managed cross-functional teams, owned budgets, and presented to C-suite, all while staying close enough to the code to architect what ships."
+     data-de="Führungskraft in Data & Analytics mit über 8 Jahren Erfahrung im Energiesektor — von der Leitung von Feldteams bis zur Architektur des modernen Daten-Stacks. Ich habe funktionsübergreifende Teams geführt, Budgets verantwortet und Ergebnisse dem C-Level präsentiert, und bin dabei nah genug am Code, um die Architektur mitzugestalten.">
+    Data & analytics leader with 8+ years in energy — from running field crews to architecting the modern data stack. I've managed cross-functional teams, owned budgets, and presented to C-suite, all while staying close enough to the code to architect what ships.
   </p>
   <div class="hero-cta">
     <a href="#leadership" class="btn btn-primary" data-en="Leadership experience" data-de="Führungserfahrung">Leadership experience</a>
@@ -220,7 +243,7 @@ footer{text-align:center;padding:3rem 2rem;font-size:.75rem;color:var(--text3);b
       <div class="detail" data-en="Regular presentations to executive leadership on data strategy, reporting, and compliance." data-de="Regelmäßige Präsentationen vor der Geschäftsleitung zu Datenstrategie, Reporting und Compliance.">Regular presentations to executive leadership on data strategy, reporting, and compliance.</div>
     </div>
     <div class="lead-card fade-up stagger-3">
-      <div class="num">Budgets</div>
+      <div class="num" data-en="Budgets" data-de="Budgets">Budgets</div>
       <div class="unit" data-en="Owned & managed" data-de="Verantwortet & gesteuert">Owned & managed</div>
       <div class="detail" data-en="End-to-end budget ownership for tooling, vendor contracts, and infrastructure spend." data-de="Vollständige Budgetverantwortung für Tooling, Lieferantenverträge und Infrastrukturausgaben.">End-to-end budget ownership for tooling, vendor contracts, and infrastructure spend.</div>
     </div>
@@ -232,10 +255,56 @@ footer{text-align:center;padding:3rem 2rem;font-size:.75rem;color:var(--text3);b
   </div>
 
   <div class="lead-narrative fade-up">
-    <p data-en="At BKV Corp, I progressed from field operations into systems management and then data & analytics, with each role building on the last. As Systems Manager, I owned EAM, SCADA, and WellView platforms, managed vendor relationships, and coordinated international development teams. Moving into BI, I designed the reporting infrastructure for environmental compliance across the organization while continuing to bridge engineering and business teams."
-       data-de="Bei BKV Corp habe ich mich von der Feldarbeit über Systemmanagement bis hin zu Daten & Analytics entwickelt, wobei jede Rolle auf der vorherigen aufbaute. Als Systemmanager verantwortete ich EAM-, SCADA- und WellView-Plattformen, steuerte Lieferantenbeziehungen und koordinierte internationale Entwicklungsteams. Im BI-Bereich entwarf ich die Reporting-Infrastruktur für Umwelt-Compliance im gesamten Unternehmen und war weiterhin die Brücke zwischen Engineering und Business.">
-      At BKV Corp, I progressed from field operations into systems management and then data & analytics, with each role building on the last. As Systems Manager, I owned EAM, SCADA, and WellView platforms, managed vendor relationships, and coordinated international development teams. Moving into BI, I designed the reporting infrastructure for environmental compliance across the organization while continuing to bridge engineering and business teams.
+    <p data-en="At BKV Corp, I progressed from Lead Field Maintenance Foreman through Systems Manager to BI Team Lead — each role building on the last. Starting in the field gave me a deep understanding of the operational reality behind every data point, which proved invaluable when I moved into systems management and then analytics leadership."
+       data-de="Bei BKV Corp habe ich mich vom leitenden Wartungsvorarbeiter über den Systemmanager bis zum BI-Teamleiter entwickelt — jede Rolle baute auf der vorherigen auf. Der Start im Feld gab mir ein tiefes Verständnis der operativen Realität hinter jedem Datenpunkt, was sich als unschätzbar erwies, als ich ins Systemmanagement und dann in die Analytics-Führung wechselte.">
+      At BKV Corp, I progressed from Lead Field Maintenance Foreman through Systems Manager to BI Team Lead — each role building on the last. Starting in the field gave me a deep understanding of the operational reality behind every data point, which proved invaluable when I moved into systems management and then analytics leadership.
     </p>
+  </div>
+</div>
+</section>
+
+<!-- CAREER TIMELINE -->
+<section id="career">
+<div class="section-inner">
+  <div class="section-label" data-en="Career" data-de="Werdegang">Career</div>
+  <div class="section-title" data-en="Career progression" data-de="Beruflicher Werdegang">Career progression</div>
+  <p class="section-desc" data-en="8 years at BKV Corp — three distinct roles, each expanding scope from hands-on operations to strategic leadership." data-de="8 Jahre bei BKV Corp — drei verschiedene Rollen, jede mit wachsendem Verantwortungsbereich von der operativen Arbeit bis zur strategischen Führung.">8 years at BKV Corp — three distinct roles, each expanding scope from hands-on operations to strategic leadership.</p>
+
+  <div class="timeline">
+
+    <div class="tl-item current fade-up stagger-1">
+      <div class="tl-dot"></div>
+      <div class="tl-date" data-en="Jan 2022 — Present" data-de="Jan 2022 — Heute">Jan 2022 — Present</div>
+      <div class="tl-role" data-en="BI Analyst — Team Lead" data-de="BI Analyst — Teamleiter">BI Analyst — Team Lead</div>
+      <div class="tl-company">BKV Corp, Scranton PA</div>
+      <div class="tl-desc" data-en="Technical lead and primary stakeholder liaison for the data analytics function. Architected the SQL layer in AWS Redshift, built executive dashboards in Power BI and Spotfire, automated ingestion pipelines, and established CI/CD and version control practices for the data team." data-de="Technischer Leiter und primärer Stakeholder-Kontakt für die Data-Analytics-Funktion. SQL-Schicht in AWS Redshift architekturiert, Executive-Dashboards in Power BI und Spotfire erstellt, Ingestion-Pipelines automatisiert und CI/CD- sowie Versionskontroll-Praktiken für das Datenteam eingeführt.">Technical lead and primary stakeholder liaison for the data analytics function. Architected the SQL layer in AWS Redshift, built executive dashboards in Power BI and Spotfire, automated ingestion pipelines, and established CI/CD and version control practices for the data team.</div>
+      <div class="tl-tags">
+        <span class="tl-tag">AWS Redshift</span><span class="tl-tag">Power BI</span><span class="tl-tag">Spotfire</span><span class="tl-tag">SQL</span><span class="tl-tag">GitHub Actions</span><span class="tl-tag">Power Automate</span>
+      </div>
+    </div>
+
+    <div class="tl-item fade-up stagger-2">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Jan 2020 — Jan 2022</div>
+      <div class="tl-role" data-en="Systems Manager" data-de="Systemmanager">Systems Manager</div>
+      <div class="tl-company">BKV Corp, Scranton PA</div>
+      <div class="tl-desc" data-en="Led a team of up to 6 across the US and India. Owned EAM, SCADA, and WellView platforms, managed the full systems budget, drove vendor negotiations and build-vs-buy evaluations, and coordinated data migrations for multiple corporate acquisitions." data-de="Ein Team von bis zu 6 Personen in den USA und Indien geleitet. EAM-, SCADA- und WellView-Plattformen verantwortet, das gesamte Systembudget gesteuert, Lieferantenverhandlungen und Build-vs-Buy-Evaluierungen durchgeführt und Datenmigrationen für mehrere Unternehmensübernahmen koordiniert.">Led a team of up to 6 across the US and India. Owned EAM, SCADA, and WellView platforms, managed the full systems budget, drove vendor negotiations and build-vs-buy evaluations, and coordinated data migrations for multiple corporate acquisitions.</div>
+      <div class="tl-tags">
+        <span class="tl-tag">EAM</span><span class="tl-tag">SCADA</span><span class="tl-tag">WellView</span><span class="tl-tag" data-en="Vendor Mgmt" data-de="Lieferantensteuerung">Vendor Mgmt</span><span class="tl-tag" data-en="Budget Ownership" data-de="Budgetverantwortung">Budget Ownership</span><span class="tl-tag" data-en="Int'l Teams" data-de="Int. Teams">Int'l Teams</span>
+      </div>
+    </div>
+
+    <div class="tl-item fade-up stagger-3">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Jan 2018 — Jan 2020</div>
+      <div class="tl-role" data-en="Lead Field Maintenance Foreman" data-de="Leitender Wartungsvorarbeiter">Lead Field Maintenance Foreman</div>
+      <div class="tl-company">BKV Corp, Scranton PA</div>
+      <div class="tl-desc" data-en="Managed a field maintenance crew of 2–3 technicians across active well sites. Oversaw warehouse inventory and stock management, handled invoicing, purchase orders, and scheduling, and ensured compliance with safety standards during all field operations." data-de="Leitung eines Wartungsteams von 2–3 Technikern an aktiven Bohrstellen. Lagerverwaltung und Bestandsmanagement verantwortet, Rechnungsstellung, Bestellungen und Terminplanung abgewickelt sowie die Einhaltung von Sicherheitsstandards bei allen Feldarbeiten sichergestellt.">Managed a field maintenance crew of 2–3 technicians across active well sites. Oversaw warehouse inventory and stock management, handled invoicing, purchase orders, and scheduling, and ensured compliance with safety standards during all field operations.</div>
+      <div class="tl-tags">
+        <span class="tl-tag" data-en="Crew Management" data-de="Teamführung">Crew Management</span><span class="tl-tag" data-en="Inventory" data-de="Lagerverwaltung">Inventory</span><span class="tl-tag" data-en="Scheduling" data-de="Terminplanung">Scheduling</span><span class="tl-tag" data-en="Invoicing" data-de="Rechnungsstellung">Invoicing</span><span class="tl-tag" data-en="Safety" data-de="Sicherheit">Safety</span>
+      </div>
+    </div>
+
   </div>
 </div>
 </section>
@@ -440,8 +509,8 @@ footer{text-align:center;padding:3rem 2rem;font-size:.75rem;color:var(--text3);b
   <div class="section-title" data-en="Background" data-de="Hintergrund">Background</div>
   <div class="about-grid">
     <div class="about-text">
-      <p data-en="I'm Daniel Brown, a data and analytics leader relocating to Europe with 10+ years of industry experience and a track record of building teams, systems, and reporting infrastructure from the ground up." data-de="Ich bin Daniel Brown, eine Führungskraft in Data & Analytics mit Umzug nach Europa, über 10 Jahren Branchenerfahrung und einer Erfolgsbilanz im Aufbau von Teams, Systemen und Reporting-Infrastruktur von Grund auf.">I'm Daniel Brown, a data and analytics leader relocating to Europe with 10+ years of industry experience and a track record of building teams, systems, and reporting infrastructure from the ground up.</p>
-      <p data-en="My career arc spans field operations, systems management, and data engineering. That range gives me an uncommon ability to understand both the operational reality and the data that represents it. I've managed teams of up to 6 direct reports across the US and India, owned vendor relationships and budgets, and led systems integration for multiple corporate acquisitions." data-de="Mein Werdegang umfasst Feldarbeit, Systemmanagement und Data Engineering. Diese Breite gibt mir ein ungewöhnliches Verständnis sowohl für die operative Realität als auch für die Daten, die sie abbilden. Ich habe Teams von bis zu 6 Mitarbeitern in den USA und Indien geführt, Lieferantenbeziehungen und Budgets verantwortet und die Systemintegration bei mehreren Unternehmensübernahmen geleitet.">My career arc spans field operations, systems management, and data engineering. That range gives me an uncommon ability to understand both the operational reality and the data that represents it. I've managed teams of up to 6 direct reports across the US and India, owned vendor relationships and budgets, and led systems integration for multiple corporate acquisitions.</p>
+      <p data-en="I'm Daniel Brown, a data and analytics leader relocating to Europe with 8+ years of industry experience and a track record of building teams, systems, and reporting infrastructure from the ground up." data-de="Ich bin Daniel Brown, eine Führungskraft in Data & Analytics mit Umzug nach Europa, über 8 Jahren Branchenerfahrung und einer Erfolgsbilanz im Aufbau von Teams, Systemen und Reporting-Infrastruktur von Grund auf.">I'm Daniel Brown, a data and analytics leader relocating to Europe with 8+ years of industry experience and a track record of building teams, systems, and reporting infrastructure from the ground up.</p>
+      <p data-en="My career arc spans field operations, systems management, and data engineering. I started as a Lead Field Maintenance Foreman — managing crews, inventory, and schedules across active well sites — before moving into Systems Manager and then BI Team Lead. That range gives me an uncommon ability to understand both the operational reality and the data that represents it. I've managed teams of up to 6 direct reports across the US and India, owned vendor relationships and budgets, and led systems integration for multiple corporate acquisitions." data-de="Mein Werdegang umfasst Feldarbeit, Systemmanagement und Data Engineering. Ich begann als leitender Wartungsvorarbeiter — mit der Führung von Teams, Lagerverwaltung und Terminplanung an aktiven Bohrstellen — bevor ich zum Systemmanager und dann zum BI-Teamleiter aufstieg. Diese Breite gibt mir ein ungewöhnliches Verständnis sowohl für die operative Realität als auch für die Daten, die sie abbilden. Ich habe Teams von bis zu 6 Mitarbeitern in den USA und Indien geführt, Lieferantenbeziehungen und Budgets verantwortet und die Systemintegration bei mehreren Unternehmensübernahmen geleitet.">My career arc spans field operations, systems management, and data engineering. I started as a Lead Field Maintenance Foreman — managing crews, inventory, and schedules across active well sites — before moving into Systems Manager and then BI Team Lead. That range gives me an uncommon ability to understand both the operational reality and the data that represents it. I've managed teams of up to 6 direct reports across the US and India, owned vendor relationships and budgets, and led systems integration for multiple corporate acquisitions.</p>
       <p data-en="I hold a B.Sc. in MIS from Misericordia University and an AWS Solutions Architect certification. I stay hands-on with the modern data stack (Python, dbt, Airflow, Terraform, PySpark) because the best managers I've worked with never lost touch with what their teams actually build." data-de="Ich habe einen B.Sc. in MIS von der Misericordia University und eine AWS Solutions Architect-Zertifizierung. Ich bleibe hands-on mit dem modernen Daten-Stack (Python, dbt, Airflow, Terraform, PySpark), denn die besten Führungskräfte, mit denen ich gearbeitet habe, haben nie den Bezug zu dem verloren, was ihre Teams tatsächlich bauen.">I hold a B.Sc. in MIS from Misericordia University and an AWS Solutions Architect certification. I stay hands-on with the modern data stack (Python, dbt, Airflow, Terraform, PySpark) because the best managers I've worked with never lost touch with what their teams actually build.</p>
     </div>
   </div>
